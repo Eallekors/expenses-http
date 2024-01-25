@@ -1,8 +1,8 @@
 import './ExpenseItem.css'
 import ExpenseDate from './ExpenseDate'
-import Card from './Card'
+import Card from '../UI/Card'
 
-function ExpenseItem(props){
+const ExpenseItem = (props) => {
     const desc = props.expenseData.title.toLocaleString
     ('en-US', {month: 'long'})
     const price = props.expenseData.price.toLocaleString

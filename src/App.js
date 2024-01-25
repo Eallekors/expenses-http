@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import Expenses from './components/Expenses';
+import Expenses from './components/Expenses/Expenses';
 
 
-function App() {
+const App = () => {
   const expenses=[
   { 
     date : new Date(2023, 9, 6),
