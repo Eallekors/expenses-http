@@ -4,7 +4,7 @@ import ExpenseItem from './ExpenseItem'
 
 
 function Expenses(props){
-    
+      
       return (
             <Card className="expenses">
            <ExpenseItem expenseData={props.expenses[0]} />
