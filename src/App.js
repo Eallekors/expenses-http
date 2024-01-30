@@ -32,12 +32,15 @@ const App = () => {
 
   const addExpenseHandler = (expense) => {
     setExpenses((previousExpenses) => {
+      console.log(expense)
       return [expense, ...previousExpenses]
     })
   }
+  console.log(expenses)
   return (
     <div className="App">
       <NewExpenses onAddExpense={addExpenseHandler}></NewExpenses>
+      
       <Expenses expenses={expenses} />
     </div>
   );
