@@ -25,7 +25,9 @@ const yearChangeHandler = (event) => {
 
     // Call the callback function with the selected year
     props.onChangeFilter(selectedYear);
-};
+
+}; 
+
 
 return (
     <div className='expenses-filter'>
