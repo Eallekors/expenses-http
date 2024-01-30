@@ -18,23 +18,26 @@ const ExpenseForm = (props) => {
      const submitHandler = (event) => {
         event.preventDefault();
        
-        
+        if (enteredTitle.trim() === '' || enteredAmount.trim() === '' || enteredDate.trim() === '') {
+            // Don't submit the form if it's empty
+            console.log('Form is empty. Submission prevented.');
+            return;
+          }
 
         const expenseData = {
             title: enteredTitle,
             price: enteredAmount,
             date: new Date(enteredDate)
         }
-        //props.onSaveExpenseData(expenseData)
-        console.log(expenseData)
+        props.onSaveExpenseData(expenseData)
+        props.onCancel(false);
         setEnteredTitle('')
         setEnteredAmount('')
         setEnteredDate('')
         
      }
      const cancelHandeler= (event) => {
-        const cancel = "false"
-        props.onCancel(cancel);
+        props.onCancel(false);
      }
     
     return(
@@ -67,8 +70,8 @@ const ExpenseForm = (props) => {
                 
             
             <div className="new-expense__actions">
-                <button type="button" onClick={cancelHandeler}>Cancel</button>
                 <button type="submit" >Add Expense</button>
+                <button type="button" onClick={cancelHandeler}>Cancel</button>
             </div>
             
         </form>
