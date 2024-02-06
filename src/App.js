@@ -45,7 +45,7 @@ const App = () => {
   const addExpenseHandler = (expense) => {
     const addExpense = async (expense) => {
     try {
-      const response = await fetch('http://localhost:3005/expenses',
+      const response = await fetch('http://localhost:3005/add-expense',
         {
           method: 'POST',
           body: JSON.stringify(expense),
